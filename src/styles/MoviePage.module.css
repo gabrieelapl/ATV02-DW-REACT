@@ -1,0 +1,65 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+}
+
+.bgGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: radial-gradient(ellipse 60% 60% at 50% -10%, rgba(139,26,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.state {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 120px 24px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(201,168,76,0.15);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.stateText {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.errorText {
+  color: var(--crimson-light);
+}
+
+.backBtn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-dim);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
